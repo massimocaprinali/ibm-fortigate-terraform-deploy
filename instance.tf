@@ -1,8 +1,8 @@
-//resource "ibm_is_ssh_key" "sshkey" {
+resource "ibm_is_ssh_key" "sshkey" {
 // Name must be lowercase
- // name       = "${var.cluster_name}-sshkey-${random_string.random_suffix.result}"
- // public_key = var.ssh_public_key
-//}
+  name       = "${var.cluster_name}-sshkey-${random_string.random_suffix.result}"
+  public_key = var.ssh_public_key
+}
 
 resource "ibm_is_volume" "testacc_volume" {
 // Name must be lower case
@@ -38,7 +38,7 @@ resource "ibm_is_instance" "fgt1" {
   vpc       = ibm_is_vpc.vpc1.id
   zone      = var.zone1
   user_data = data.template_file.userdata.rendered
-  //keys      = [ibm_is_ssh_key.sshkey.id]
+  keys      = [ibm_is_ssh_key.sshkey.id]
 }
 
 
