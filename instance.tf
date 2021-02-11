@@ -1,7 +1,7 @@
 resource "ibm_is_ssh_key" "sshkey" {
 // Name must be lowercase
   name       = "${var.cluster_name}-sshkey-${random_string.random_suffix.result}"
-  public_key = file(var.ssh_public_key)
+  public_key = var.ssh_public_key
 }
 
 resource "ibm_is_volume" "testacc_volume" {
