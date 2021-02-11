@@ -1,6 +1,6 @@
-variable "ssh_public_key" {
-  default = ""
-}
+//variable "ssh_public_key" {
+//  default = ""
+//}
 
 // IBM Regions
 variable "region" {
