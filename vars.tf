@@ -1,6 +1,6 @@
-variable "ssh_public_key" {
-  default = ""
-}
+//variable "ssh_public_key" {
+//  default = ""
+//}
 
 // IBM Regions
 variable "region" {
@@ -38,7 +38,7 @@ variable "secondary_subnet" {
 // FortiOS Custom Image ID
 // https://docs.fortinet.com/vm/ibm/fortigate/6.4/ibm-cloud-cookbook/6.4.2/992669/deploying-fortigate-vm-on-ibm-cloud
 variable "image" {
-  default = "cos://us-geo/fortinet/fortigate_byol_644_b1803_GA.qcow2"
+  default = "r006-4a3919d2-3cb8-4039-92fc-9660e838ba71"
 }
 variable "ibmcloud_api_key" {
   default = ""
