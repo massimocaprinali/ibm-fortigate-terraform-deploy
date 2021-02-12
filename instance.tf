@@ -18,7 +18,7 @@ resource "ibm_is_floating_ip" "publicip" {
 
 resource "ibm_is_instance" "fgt1" {
   name    = "${var.cluster_name}-fortigate-${random_string.random_suffix.result}"
-  image   = var.image
+  image   = ibm_is_image.vnf_custom_image.id
   profile = var.profile
 
   primary_network_interface {
