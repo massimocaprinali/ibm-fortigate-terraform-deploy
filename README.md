@@ -36,8 +36,6 @@ Terraform deploys the following components:
 
 To destroy the cluster, click on `Actions`...->`Destroy`
 
-## Additional information
-
 # Support
 
 Fortinet-provided scripts in this and other GitHub projects do not fall under the regular Fortinet technical support scope and are not supported by FortiCare Support Services.
