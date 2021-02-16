@@ -4,7 +4,7 @@ FortiGate IBM Deployment Template.
 
 ## Description
 
-A Terraform script to deploy a single FortiGate in IBM Cloud
+A Terraform script to deploy a single FortiGate in IBM Cloud using the Schematics service.
 
 ## Requirements
 
