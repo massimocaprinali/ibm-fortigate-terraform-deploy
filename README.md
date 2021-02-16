@@ -25,45 +25,18 @@ Terraform deploys the following components:
 
 ## Deployment
 
-//TODO: once map is introduced deployment will change to also have the fortigate version step.
-
-> **Note:** By default the script expects an ssh key at ~/.ssh/id_rsa.pub
-> To deploy the FortiDemo Inspector:
-
-1. Clone the repository.
-2. Change to the cloned directory and initialize the providers and modules:
-
-    ```sh
-    $ cd fortidemo-inspector
-    $ terraform init
-    ```
-
-3. Submit the Terraform plan using the command below. Replace the variables with your own AccessKey and Secret Key.
-
-    ```sh
-    $ terraform plan -var "ibmcloud_api_key=<secret_key>"
-    ```
-
-4. Verify output.
-5. Confirm and apply the plan:
-
-    ```sh
-    $ terraform apply -var "ibmcloud_api_key=<secret_key>"
-    ```
-
-6. If output is satisfactory, type `yes`.
+1. From the IBM console navitagte to schematics.
+2. Fill in the workspace info and create your workspace.
+3. Copy the repo URL into repository URL field and then select Terraform version 0.13.
+4. Add in your ssh key and adjust any Variables as needed in the settings.
+5. Apply the plan.
+6. Outputs, such as the Public IP and Default username and password can be found under the `View Log` link.
 
 ## Destroy the cluster
 
-To destroy the cluster, use the command:
-
-```sh
-$ terraform destroy -var "ibmcloud_api_key=<secret_key>"
-```
+To destroy the cluster, click on `Actions`...->`Destroy`
 
 ## Additional information
-
-// TODO:
 
 # Support
 
