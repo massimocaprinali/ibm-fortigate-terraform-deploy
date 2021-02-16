@@ -10,7 +10,7 @@ A Terraform script to deploy a single FortiGate in IBM Cloud
 
 -   [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) 0.13+
 -   An [IBM Gen 2 API key](https://cloud.ibm.com/docs/terraform?topic=terraform-provider-reference)
--   FortiOS 6.2.3 //TODO: check version
+-   FortiOS 6.4.3 BYOL License.
 
 ## Deployment overview
 
@@ -19,6 +19,9 @@ Terraform deploys the following components:
 -   A VPC with two subnets
 -   A FortiGate BYOL instance with two NICs, one in each subnet
 -   A security group with no restrictions
+-   A Floating Public IP address attached to the FortiGate
+-   A Logging disk
+-   A basic bootstrap, including license if supplied.
 
 ## Deployment
 

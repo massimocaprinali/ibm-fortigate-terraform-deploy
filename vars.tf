@@ -1,3 +1,4 @@
+# Your SSH key
 variable "ssh_public_key" {
   default = ""
 }
@@ -35,10 +36,13 @@ variable "secondary_subnet" {
   type    = string
   default = "172.16.8.0/24"
 }
+
 // FortiOS Custom Image ID
 // https://docs.fortinet.com/vm/ibm/fortigate/6.4/ibm-cloud-cookbook/6.4.2/992669/deploying-fortigate-vm-on-ibm-cloud
+// Deploys 6.4.3 Image
+// 6.4.4 available link: cos://us-geo/fortinet/fortigate_byol_644_b1803_GA.qcow2
 variable "image" {
-  default = "cos://us-geo/fortinet/fortigate_byol_644_b1803_GA.qcow2"
+  default = "cos://us-geo/fortinet/fortigate_byol_643_b1778_GA.qcow2"
 }
 variable "ibmcloud_api_key" {
   default = ""
@@ -48,11 +52,6 @@ variable "ibmcloud_api_key" {
 variable "profile" {
   default = "cx2-2x4"
 }
-// IBM Cloud instance profile
-// https://cloud.ibm.com/docs/vpc?topic=vpc-profiles
-//variable "profile" {
-//  default = "cx2-2x4"
-//}
 
 // Bootstrap configuration file
 variable "user_data" {
@@ -60,8 +59,8 @@ variable "user_data" {
   default = "user_data.conf"
 }
 
-// License file for the FortiGate: TODO: make image conditional based on this.
+// FortiGate License. When Providing via Schematics ensure this is a sensitive feild.
 variable "license" {
   type    = string
-  default = "license.lic"
+  default = ""
 }

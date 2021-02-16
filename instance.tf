@@ -4,7 +4,7 @@ resource "ibm_is_ssh_key" "sshkey" {
   public_key = var.ssh_public_key
 }
 
-resource "ibm_is_volume" "testacc_volume" {
+resource "ibm_is_volume" "logDisk" {
 // Name must be lower case
   name    = "${var.cluster_name}-logdisk-${random_string.random_suffix.result}"
   profile = "10iops-tier"
@@ -33,7 +33,7 @@ resource "ibm_is_instance" "fgt1" {
     security_groups = [ibm_is_security_group.fgt_security_group.id]
   }
 
-  volumes = [ibm_is_volume.testacc_volume.id]
+  volumes = [ibm_is_volume.logDisk.id]
 
   vpc       = ibm_is_vpc.vpc1.id
   zone      = var.zone1
@@ -48,9 +48,4 @@ data "template_file" "userdata" {
   vars = {
     license_file = ""
   }
-  //TODO: should be and if statement and decide between PAYG and BYOL
-  //  vars = {
-  //    license_file = "${file("${var.license}")}"
-  // }
-
 }
