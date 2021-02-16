@@ -25,16 +25,27 @@ Terraform deploys the following components:
 
 ## Deployment
 
-1. From the IBM console navitagte to schematics.
+1. From the IBM console navitagte to Schematics.
 2. Fill in the workspace info and create your workspace.
 3. Copy the repo URL into repository URL field and then select Terraform version 0.13.
+
+    ![IBM FortiGate Deploy](./imgs/step_3.png)
+
 4. Add in your ssh key and adjust any Variables as needed in the settings.
+
+    ![IBM FortiGate Deploy](./imgs/step_4.png)
+
 5. Apply the plan.
-6. Outputs, such as the Public IP and Default username and password can be found under the `View Log` link.
+6. Outputs, such as the **Public IP** and **Default username and password** can be found under the `View Log` link.
+
+    ![IBM FortiGate Deploy](./imgs/step_6_a.png)
+    ![IBM FortiGate Deploy](./imgs/step_6_b.png)
 
 ## Destroy the cluster
 
 To destroy the cluster, click on `Actions`...->`Destroy`
+
+![IBM FortiGate Deploy](./imgs/destroy_cluster.png)
 
 # Support
 
