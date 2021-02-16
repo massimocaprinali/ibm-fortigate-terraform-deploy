@@ -43,7 +43,7 @@ Terraform deploys the following components:
 
 ## Destroy the cluster
 
-To destroy the cluster, click on `Actions`...->`Destroy`
+To destroy the cluster, click on `Actions...`->`Destroy`
 
 ![IBM FortiGate Deploy](./imgs/destroy_cluster.png)
 
