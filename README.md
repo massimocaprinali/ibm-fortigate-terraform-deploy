@@ -1,6 +1,6 @@
 # ibm-fortigate-terraform-deploy
 
-FortiGate IBM Deployment Templates - Currently in Development
+FortiGate IBM Deployment Template.
 
 ## Description
 
@@ -9,10 +9,11 @@ A Terraform script to deploy a single FortiGate in IBM Cloud
 ## Requirements
 
 -   [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) 0.13+
--   An [IBM Gen 2 API key](https://cloud.ibm.com/docs/terraform?topic=terraform-provider-reference)
 -   FortiOS 6.4.3 BYOL License.
 
 ## Deployment overview
+
+> **Note:** For a local deployment a Gen 2 API key will be needed. For details see: [IBM Gen 2 API key](https://cloud.ibm.com/docs/terraform?topic=terraform-provider-reference)
 
 Terraform deploys the following components:
 
