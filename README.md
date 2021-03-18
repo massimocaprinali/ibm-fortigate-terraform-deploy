@@ -1,15 +1,6 @@
-# ibm-fortigate-terraform-deploy
-
-FortiGate IBM Deployment Template.
-
 ## Description
 
-A Terraform script to deploy a single FortiGate in IBM Cloud using the Schematics service.
-
-## Requirements
-
--   [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) 0.13+
--   FortiOS 6.4.3 BYOL License.
+Deploy a single BYOL FortiGate in IBM Cloud using the Schematics service.
 
 ## Deployment overview
 
@@ -22,9 +13,10 @@ Terraform deploys the following components:
 -   A security group with no restrictions
 -   A Floating Public IP address attached to the FortiGate
 -   A Logging disk
--   A basic bootstrap, including license if supplied.
 
-## Deployment
+## Alternative Schmeatics Deployment
+
+Deploying This package from IBM Schmeatics is possible. To do so navigate to the Repo at https://github.com/fortinet/ibm-fortigate-terraform-deploy and follow the steps below:
 
 1. From the IBM console navitagte to Schematics.
 2. Fill in the workspace info and create your workspace.
