@@ -14,9 +14,9 @@ Terraform deploys the following components:
 -   A Floating Public IP address attached to the FortiGate
 -   A Logging disk
 
-## Alternative Schmeatics Deployment
+## Alternative Schematics Deployment
 
-Deploying This package from IBM Schmeatics is possible. To do so navigate to the Repo at https://github.com/fortinet/ibm-fortigate-terraform-deploy and follow the steps below:
+Deploying This package from IBM Schematics is possible. To do so navigate to the Repo at https://github.com/fortinet/ibm-fortigate-terraform-deploy and follow the steps below:
 
 1. From the IBM console navitagte to Schematics.
 2. Fill in the workspace info and create your workspace.
