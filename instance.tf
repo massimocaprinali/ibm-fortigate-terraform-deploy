@@ -1,11 +1,11 @@
 resource "ibm_is_ssh_key" "sshkey" {
-// Name must be lowercase
+  // Name must be lowercase
   name       = "${var.cluster_name}-sshkey-${random_string.random_suffix.result}"
   public_key = var.ssh_public_key
 }
 
 resource "ibm_is_volume" "logDisk" {
-// Name must be lower case
+  // Name must be lower case
   name    = "${var.cluster_name}-logdisk-${random_string.random_suffix.result}"
   profile = "10iops-tier"
   zone    = var.zone1

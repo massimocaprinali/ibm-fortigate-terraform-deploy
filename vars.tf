@@ -5,28 +5,28 @@ variable "ssh_public_key" {
 // Magic Value for Calalog Validation that initlizes terraform with a specific version.
 // Only needed in IBM catalog.
 variable "TF_VERSION" {
- default = "0.13"
- description = "Terraform version to be used in validation"
+  default     = "0.13"
+  description = "Terraform version to be used in validation"
 }
 // IBM Regions
 variable "region" {
-  type    = string
-  default = "us-south"
+  type        = string
+  default     = "us-south"
   description = "Deployment Region"
 
 }
 // IBM availability zones
 variable "zone1" {
-  type    = string
-  default = "us-south-1"
+  type        = string
+  default     = "us-south-1"
   description = "Deployment Zone."
 
 }
 // Name will be in the format of cluster_name-RESOURCE-randomSuffix to be easily identifiable.
 // Name must be lowercase
 variable "cluster_name" {
-  type    = string
-  default = "fortigate-terraform"
+  type        = string
+  default     = "fortigate-terraform"
   description = "Cluster name will be appended by a random Suffix to prevent collisions and allow easier identification."
 
 }
@@ -51,13 +51,13 @@ variable "ibmcloud_api_key" {
 // Default Instance type
 // See: https://cloud.ibm.com/docs/vpc?topic=vpc-profiles
 variable "profile" {
-  default = "cx2-2x4"
+  default     = "cx2-2x4"
   description = "VM size and family"
 }
 
 // Bootstrap configuration file
 variable "user_data" {
-  type    = string
-  default = "user_data.conf"
-  description = "The Custom Bootstrap Data file."
+  type        = string
+  default     = "user_data.conf"
+  description = "The Custom Bootstrap Data file name."
 }
