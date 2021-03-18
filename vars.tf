@@ -1,7 +1,7 @@
 // Your SSH key
 variable "ssh_public_key" {
   default = ""
-  description = "public ssh key to be used with the FortiGate. Required Value."
+  description = "Copy in a public ssh key to be used with the FortiGate. Required Value."
 }
 // Magic Value for Calalog Validation that initlizes terraform with a specific version.
 // Only needed in IBM catalog.
