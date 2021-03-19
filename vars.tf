@@ -1,6 +1,6 @@
 // Your SSH key
 variable "ssh_public_key" {
-  default = ""
+  default     = ""
   description = "Copy in a public ssh key to be used with the FortiGate. Required Value."
 }
 // Magic Value for Calalog Validation that initlizes terraform with a specific version.
@@ -16,6 +16,7 @@ variable "region" {
   description = "Deployment Region"
 
 }
+
 // IBM availability zones
 variable "zone1" {
   type        = string
@@ -23,6 +24,28 @@ variable "zone1" {
   description = "Deployment Zone."
 
 }
+variable "vpc" {
+  type        = string
+  default     = ""
+  description = "Name of the VPC you want to deploy a FortiGate into."
+}
+variable "subnet1" {
+  type        = string
+  default     = ""
+  description = "The Primary, Public Subnet Used for port1 on the FortiGate"
+}
+variable "subnet2" {
+  type        = string
+  default     = ""
+  description = "The Secondary, Private Subnet Used for port2 on the FortiGate"
+}
+
+variable "security_group" {
+  type        = string
+  default     = ""
+  description = "The Security Group to attach to the FortiGate Instance Network Interfaces."
+}
+
 // Name will be in the format of cluster_name-RESOURCE-randomSuffix to be easily identifiable.
 // Name must be lowercase
 variable "cluster_name" {
@@ -48,7 +71,7 @@ variable "image" {
 }
 //For more details see: https://cloud.ibm.com/docs/account?topic=account-userapikey
 variable "ibmcloud_api_key" {
-  default = ""
+  default     = ""
   description = "IBM Gen2 API key."
 }
 // Default Instance type
