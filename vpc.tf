@@ -11,10 +11,13 @@ data "ibm_is_subnet" "subnet1" {
 data "ibm_is_subnet" "subnet2" {
   name = var.subnet2
 }
-resource "ibm_is_vpc_routing_table" "test_cr_route_table1" {
-  name = "test-cr-route-table1"
+resource "ibm_is_vpc_routing_table" "fgt_route_table" {
+  name = "${var.cluster_name}-port1-${random_string.random_suffix.result}"
   vpc  = data.ibm_is_vpc.vpc1.id
 }
+
+
+
 # // Primary Subnet
 # resource "ibm_is_subnet" "subnet1" {
 #   name                     = "${var.cluster_name}-primary-subnet-${random_string.random_suffix.result}"
@@ -30,7 +33,7 @@ resource "ibm_is_vpc_routing_table" "test_cr_route_table1" {
 #   total_ipv4_address_count = 256
 
 # }
-data "ibm_is_security_group" "security_group" {
+data "ibm_is_security_group" "fgt_security_group" {
   name = var.security_group
 }
 

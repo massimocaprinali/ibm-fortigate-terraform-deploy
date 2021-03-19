@@ -23,19 +23,19 @@ resource "ibm_is_instance" "fgt1" {
 
   primary_network_interface {
     name            = "${var.cluster_name}-port1-${random_string.random_suffix.result}"
-    subnet          = ibm_is_subnet.subnet1.id
-    security_groups = [ibm_is_security_group.fgt_security_group.id]
+    subnet          = data.ibm_is_subnet.subnet1.id
+    security_groups = [data.ibm_is_security_group.fgt_security_group.id]
   }
 
   network_interfaces {
     name            = "${var.cluster_name}-port2-${random_string.random_suffix.result}"
-    subnet          = ibm_is_subnet.subnet2.id
-    security_groups = [ibm_is_security_group.fgt_security_group.id]
+    subnet          = data.ibm_is_subnet.subnet2.id
+    security_groups = [data.ibm_is_security_group.fgt_security_group.id]
   }
 
   volumes = [ibm_is_volume.logDisk.id]
 
-  vpc       = ibm_is_vpc.vpc1.id
+  vpc       = data.ibm_is_vpc.vpc1.id
   zone      = var.zone1
   user_data = data.template_file.userdata.rendered
   keys      = [ibm_is_ssh_key.sshkey.id]
