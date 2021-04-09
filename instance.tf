@@ -36,5 +36,5 @@ resource "ibm_is_instance" "fgt1" {
   vpc       = data.ibm_is_vpc.vpc1.id
   zone      = var.zone1
   user_data = data.template_file.userdata.rendered
-  keys      = [ibm_is_ssh_key.ssh_key.id]
+  keys      = [data.ibm_is_ssh_key.ssh_key.id]
 }
