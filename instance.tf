@@ -38,3 +38,7 @@ resource "ibm_is_instance" "fgt1" {
   user_data = data.template_file.userdata.rendered
   keys      = [data.ibm_is_ssh_key.ssh_key.id]
 }
+// Use for bootstrapping cloud-init
+data "template_file" "userdata" {
+  template = file(var.user_data)
+}
