@@ -1,7 +1,7 @@
 // Your SSH key
 variable "ssh_public_key" {
   default     = ""
-  description = "Public ssh ID name. This neesd to be pre-created."
+  description = "Public ssh ID name. This needs to be pre-created."
 }
 // Magic Value for Calalog Validation that initlizes terraform with a specific version.
 // Only needed in IBM catalog.
