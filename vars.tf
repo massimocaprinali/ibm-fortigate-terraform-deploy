@@ -32,12 +32,12 @@ variable "vpc" {
 variable "subnet1" {
   type        = string
   default     = ""
-  description = "The Primary, Public Subnet Used for port1 on the FortiGate"
+  description = "The ID of the Primary, Public Subnet Used for port1 on the FortiGate"
 }
 variable "subnet2" {
   type        = string
   default     = ""
-  description = "The Secondary, Private Subnet Used for port2 on the FortiGate"
+  description = "The ID of the Secondary, Private Subnet Used for port2 on the FortiGate"
 }
 
 variable "security_group" {
