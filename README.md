@@ -22,8 +22,9 @@ Terraform deploys the following components:
 
 1. Fill in the required VPC, Subnet and ssh key values as shown below:
 
+    ![IBM FortiGate Deploy](https://raw.githubusercontent.com/fortinet/ibm-fortigate-terraform-deploy/main/imgs/step_2_catalog_deploy.png)
+
 > **Note** For Subnets, put the UUID of the subnet. Not the name
-> ![IBM FortiGate Deploy](https://raw.githubusercontent.com/fortinet/ibm-fortigate-terraform-deploy/main/imgs/step_6_a.png)
 
 2. Apply the Plan.
 
