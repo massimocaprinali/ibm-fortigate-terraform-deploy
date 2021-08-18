@@ -26,6 +26,9 @@ Terraform deploys the following components:
 
 > **Note** For Subnets, put the UUID of the subnet. Not the name
 
+ ![IBM FortiGate Deploy](https://raw.githubusercontent.com/fortinet/ibm-fortigate-terraform-deploy/main/imgs/step_6_a.png)
+
+
 2. Apply the Plan.
 
 3. Outputs, such as the **Public IP** and **Default username and password** can be found under the `View Log` link.
