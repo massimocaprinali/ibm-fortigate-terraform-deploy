@@ -3,14 +3,13 @@ name: 'Build IBM release'
 on:
     push:
         tags:
-        - '*'
+        - 'v*'
 
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-
             - name: 'Make the Distribution Directory'
               run: |
                   mkdir  ibm-fortigate-terraform-deploy
@@ -25,5 +24,6 @@ jobs:
                   repo_token: '${{ secrets.IBM_TOKEN }}'
                   automatic_release_tag: 'latest'
                   prerelease: false
+                  title: 'Release-ibm-fortigate-terraform-deploy-singlevm ${{github.ref_name}}'
                   files: |
                       ibm-fortigate-terraform-deploy-singlevm.tar.gz
