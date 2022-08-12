@@ -66,7 +66,7 @@ resource "random_string" "random_suffix" {
 // https://docs.fortinet.com/vm/ibm/fortigate/6.4/ibm-cloud-cookbook/6.4.2/992669/deploying-fortigate-vm-on-ibm-cloud
 // Deploys 7.2.0 image
 variable "image" {
-  default = "cos://us-geo/fortinet/fortigate_byol_720_b1157_GA.qcow2"
+  default = "cos://us-geo/fortinet/fortigate_byol_721_b1254_GA.qcow2"
 }
 //For more details see: https://cloud.ibm.com/docs/account?topic=account-userapikey
 variable "ibmcloud_api_key" {
