@@ -14,21 +14,46 @@ resource "ibm_is_floating_ip" "publicip" {
   target = ibm_is_instance.fgt1.primary_network_interface[0].id
 }
 
+resource "ibm_is_virtual_network_interface" "port1" {
+  name                      = "${var.cluster_name}-port1-${random_string.random_suffix.result}-vni"
+  allow_ip_spoofing         = true
+  enable_infrastructure_nat = true
+  subnet                    = data.ibm_is_subnet.subnet1.id
+  security_groups           = [data.ibm_is_security_group.fgt_security_group.id]
+}
+
+resource "ibm_is_virtual_network_interface" "port2" {
+  name                      = "${var.cluster_name}-port2-${random_string.random_suffix.result}-vni"
+  allow_ip_spoofing         = true
+  enable_infrastructure_nat = true
+  subnet                    = data.ibm_is_subnet.subnet2.id
+  security_groups           = [data.ibm_is_security_group.fgt_security_group.id]
+}
+
 resource "ibm_is_instance" "fgt1" {
   name    = "${var.cluster_name}-fortigate-${random_string.random_suffix.result}"
   image   = ibm_is_image.vnf_custom_image.id
   profile = var.profile
 
-  primary_network_interface {
-    name            = "${var.cluster_name}-port1-${random_string.random_suffix.result}"
-    subnet          = data.ibm_is_subnet.subnet1.id
-    security_groups = [data.ibm_is_security_group.fgt_security_group.id]
+  primary_network_attachment {
+    name = "${var.cluster_name}-port1-${random_string.random_suffix.result}"
+    virtual_network_interface {
+      id = ibm_is_virtual_network_interface.port1.id
+    }
   }
 
-  network_interfaces {
-    name            = "${var.cluster_name}-port2-${random_string.random_suffix.result}"
-    subnet          = data.ibm_is_subnet.subnet2.id
-    security_groups = [data.ibm_is_security_group.fgt_security_group.id]
+  network_attachments {
+    name = "${var.cluster_name}-port1-${random_string.random_suffix.result}"
+    virtual_network_interface {
+      id = ibm_is_virtual_network_interface.port1.id
+    }
+  }
+
+  network_attachments {
+    name = "${var.cluster_name}-port2-${random_string.random_suffix.result}"
+    virtual_network_interface {
+      id = ibm_is_virtual_network_interface.port2.id
+    }
   }
 
   volumes = [ibm_is_volume.logDisk.id]
